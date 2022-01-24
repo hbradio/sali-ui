@@ -68,7 +68,10 @@
   }
 
   function search() {
-    results = fuse.search(searchString).splice(0, 5).filter(result => result.score < 0.4);
+    results = fuse
+      .search(searchString)
+      .splice(0, 5)
+      .filter((result) => result.score < 0.4);
     if (results.length > 0) {
       document.body.style.backgroundColor = levels.get(
         results[0].item.score
@@ -81,7 +84,11 @@
 </script>
 
 <main>
-  <input bind:value={searchString} />
+  <div class="prompt">
+    <h1>Is</h1>
+    <input bind:value={searchString} autofocus />
+    <h1>high in salicylates?</h1>
+  </div>
   {#if searchString !== "" && results.length == 0}
     <p>Sorry, no results were found.</p>
   {/if}
@@ -94,23 +101,24 @@
 
 <style>
   main {
-    text-align: center;
     padding: 1em;
     max-width: 720px;
     margin: 0 auto;
   }
 
   .result {
+    margin-bottom: 1em;
+    border-radius: 10px;
     padding: 0.2em;
   }
 
   .first-result {
-    font-size: 3em;
-    font-weight: bold;
+    font-size: 2.441em;
     margin-block-start: 0;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3) 
   }
   .second-result {
-    font-size: 2em;
+    font-size: 1.953em;
   }
 
   .very-high {
@@ -130,5 +138,9 @@
   .very-low {
     color: white;
     background-color: #4078a6;
+  }
+
+  .prompt {
+    margin-bottom: 5em;
   }
 </style>
