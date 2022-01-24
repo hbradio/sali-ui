@@ -85,9 +85,9 @@
 
 <main>
   <div class="prompt">
-    <h1>Is</h1>
-    <input bind:value={searchString} autofocus />
-    <h1>high in salicylates?</h1>
+    <h3 class="prompt-text">Is</h3>
+    <input class="prompt-text prompt-input" bind:value={searchString} autofocus />
+    <h3 class="prompt-text">high in salicylates?</h3>
   </div>
   {#if searchString !== "" && results.length == 0}
     <p>Sorry, no results were found.</p>
@@ -102,7 +102,7 @@
 <style>
   main {
     padding: 1em;
-    max-width: 720px;
+    max-width: 800px;
     margin: 0 auto;
   }
 
@@ -141,6 +141,16 @@
   }
 
   .prompt {
-    margin-bottom: 5em;
+    margin-bottom: 2em;
+  }
+
+  .prompt-text {
+    display: inline;
+  }
+
+  .prompt-input {
+    font-size: 1.953rem;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
   }
 </style>
