@@ -85,7 +85,7 @@
 
 <main>
   <div class="prompt">
-    <h3 class="prompt-text">Is</h3>
+    <h3 class="prompt-text prompt-text-left">Is</h3>
     <input class="prompt-text prompt-input" bind:value={searchString} autofocus />
     <h3 class="prompt-text prompt-text-right">high in salicylates?</h3>
   </div>
