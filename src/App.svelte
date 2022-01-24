@@ -102,7 +102,7 @@
 <style>
   main {
     padding: 1em;
-    max-width: 1060px;
+    max-width: 600px;
     margin: 0 auto;
   }
 
