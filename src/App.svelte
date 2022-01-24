@@ -86,7 +86,11 @@
 <main>
   <div class="prompt">
     <h3 class="prompt-text prompt-text-left">Is</h3>
-    <input class="prompt-text prompt-input" bind:value={searchString} autofocus />
+    <input
+      class="prompt-text prompt-input"
+      bind:value={searchString}
+      autofocus
+    />
     <h3 class="prompt-text prompt-text-right">high in salicylates?</h3>
   </div>
   {#if searchString !== "" && results.length == 0}
@@ -97,6 +101,14 @@
       {result.item.name}: {levels.get(result.item.score).label}
     </div>
   {/each}
+  <small>
+    The content on this website is not intended to be a substitute for
+    professional medical advice, diagnosis or treatment. The data source is <a
+      href="https://atpscience.com/salicylate-foods-sensitivity-intolerances-and-food-list/"
+      >just stuff on the internet</a
+    >. Questions?
+    <a href="https://twitter.com/hbradio">Message me on Twitter.</a>
+  </small>
 </main>
 
 <style>
@@ -115,7 +127,7 @@
   .first-result {
     font-size: 2.441em;
     margin-block-start: 0;
-    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3) 
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
   }
   .second-result {
     font-size: 1.953em;
